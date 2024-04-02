@@ -10,6 +10,7 @@ export default ({ mode }) => {
     },
     resolve: {
       alias: {
+        'api': path.resolve('src/api/'),      
         'components': path.resolve('src/components/'),
         'pages': path.resolve('src/pages/'),
         'lib': path.resolve('src/lib/'),
