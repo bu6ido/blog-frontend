@@ -13,6 +13,7 @@ class CommentsApi {
   async getComments(request = {}) {
     const { filters, page, rowsPerPage, sortBy, sortDir } = request;
     let params = {};
+    let postId = null;
     
     if (typeof filters !== 'undefined') {
       /*data = data.filter((user) => {
@@ -59,7 +60,8 @@ class CommentsApi {
         }
 
         if (typeof filters.postId !== 'undefined' && filters.postId !== null) {
-            params.post_id = filters.postId;
+            //params.post_id = filters.postId;
+            postId = filters.postId;
         }
     }
 
@@ -79,7 +81,7 @@ class CommentsApi {
 
     let queryString = new URLSearchParams(params).toString();
 //    const headers = await getCommonHeaders();
-    const response = await axios.get('/api/comments?' + queryString);
+    const response = await axios.get(`/api/posts/${postId}/comments?${queryString}`);
     
     let result = response.data || {};
     
@@ -94,7 +96,7 @@ class CommentsApi {
 
   async createComment(obj = {}) {
 //    const headers = await getCommonHeaders();  
-    const response = await axios.post('/api/comments', obj);
+    const response = await axios.post(`/api/posts/${obj.post_id}/comments`, obj);
     const result = response.data || {}; 
     return result; 
   }
