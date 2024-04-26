@@ -5,6 +5,9 @@
 <a href="https://github.com/nilanth/laravel-breeze-react/releases"><img src="https://img.shields.io/github/release/nilanth/laravel-breeze-react.svg?style=flat-square" alt="Latest Stable Version"></a>
 </p>
 
+## This is the Frontend module
+This is the Frontend module. You can check the Backend module of this application: <a href="https://github.com/bu6ido/blog-backend" alt="Backend module">https://github.com/bu6ido/blog-backend</a>
+
 ## Introduction
 
 > Laravel Breeze React is the implementation for react from [breeze-next](https://github.com/laravel/breeze-next). 
