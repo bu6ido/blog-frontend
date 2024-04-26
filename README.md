@@ -6,7 +6,7 @@
 </p>
 
 ## This is the Frontend module
-This is the Frontend module. You can check the Backend module of this application: <a href="https://github.com/bu6ido/blog-backend" alt="Backend module">https://github.com/bu6ido/blog-backend</a>
+This is the Frontend module. You can check the Backend module of this application: [https://github.com/bu6ido/blog-backend](https://github.com/bu6ido/blog-backend)
 
 ## Introduction
 
