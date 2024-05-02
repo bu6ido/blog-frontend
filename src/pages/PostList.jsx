@@ -202,11 +202,12 @@ const PostListTable = (props) => {
   }, [dlgDeletePost]);
   
   return (
-  <div>
+  <div className="flex flex-col justify-start items-center gap-2 p-2">
     <div>
       <input type="text" value={filters.query} onChange={handleQueryChange} />
     </div>
-    <table>
+    <div className="self-stretch overflow-x-auto">
+    <table className="w-max">
       <thead>
         <tr>
           <th><SortComp field="id" label="Id" /></th>
@@ -252,6 +253,7 @@ const PostListTable = (props) => {
         })}
       </tbody>
     </table>
+    </div>
     <Pagination 
       count={count} 
       page={page} 

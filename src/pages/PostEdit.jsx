@@ -5,6 +5,7 @@ import { postsApi } from 'api/posts';
 import { getErrorMessage, getErrorsList, ErrorContext } from 'lib/common';
 import { useAuth } from 'hooks/auth'
 import AppLayout from 'components/Layouts/AppLayout';
+import Button from 'components/Button';
 import NotFoundPage from 'pages/404';
 import CommentList from 'pages/CommentList';
 
@@ -134,14 +135,16 @@ const PostForm = (props) => {
 //  const { user } = useAuth({ middleware: 'auth' });
   return (
     <>
-    <form onSubmit={onSubmit}>
+    <form onSubmit={onSubmit} className="flex flex-col justify-start items-stretch gap-2 p-2">
       { post.id && <input type="hidden" name="id" defaultValue={post.id} /> }
       <input type="text" name="title" value={post.title} onChange={onTitleChange} />
-      { validObj && validObj.title && <span>{validObj.title}</span> }
+      { validObj && validObj.title && <span className="text-red-600">{validObj.title}</span> }
       <textarea name="content" rows={10} onChange={onContentChange} value={post.content} />
-      { validObj && validObj.content && <span>{validObj.content}</span> }
+      { validObj && validObj.content && <span className="text-red-600">{validObj.content}</span> }
       <input type="hidden" name="user_id" defaultValue={post.user_id} />
-      <input type="submit" name="save_post" value="Save Post" />
+      <Button type="submit" name="save_post" className="self-center">
+        Save Post
+      </Button>
     </form>
     
     { post.id && <CommentList postId={post.id} /> }
@@ -161,6 +164,9 @@ export const PostCreate = (props) => {
       </h2>
     }>
     <div className="py-12">
+      <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+    
       <PostForm
         post={postForm.post}
         validObj={postForm.validObj}
@@ -168,6 +174,9 @@ export const PostCreate = (props) => {
         onTitleChange={postForm.handleTitleChange}
         onContentChange={postForm.handleContentChange}
       />
+
+        </div>
+      </div>
     </div>    
   </AppLayout>
   );  
@@ -188,6 +197,9 @@ const PostEdit = (props) => {
       </h2>
     }>
     <div className="py-12">
+      <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+    
       <PostForm
         post={postForm.post}
         validObj={postForm.validObj}
@@ -195,6 +207,9 @@ const PostEdit = (props) => {
         onTitleChange={postForm.handleTitleChange}
         onContentChange={postForm.handleContentChange}
       />
+      
+        </div>
+      </div>
     </div>    
   </AppLayout>
   );

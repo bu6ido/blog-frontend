@@ -125,14 +125,16 @@ const CommentForm = (props) => {
 //  const { user } = useAuth({ middleware: 'auth' });
   return (
     <>
-    <form onSubmit={onSubmit}>
+    <form onSubmit={onSubmit} className="flex flex-col justify-start items-stretch gap-2 p-2">
       { comment.id && <input type="hidden" name="id" defaultValue={comment.id} /> }
-      { comment.user_id && comment.user && <label>{comment.user.name}</label> }
+      { comment.user_id && comment.user && <label className="font-semibold">{comment.user.name}</label> }
       <textarea name="content" rows={10} onChange={onContentChange} value={comment.content} />
-      { validObj && validObj.content && <span>{validObj.content}</span> }
+      { validObj && validObj.content && <span className="text-red-600">{validObj.content}</span> }
       <input type="hidden" name="post_id" defaultValue={comment.post_id} />
       <input type="hidden" name="user_id" defaultValue={comment.user_id} />
-      <input type="submit" name="save_comment" value="Save Comment" />
+      <Button type="submit" name="save_comment" className="self-center">
+        Save Comment
+      </Button>
     </form>
     </>
   );
@@ -160,12 +162,18 @@ export const CommentCreate = (props) => {
       </h2>
     }>
     <div className="py-12">
+      <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+            
       <CommentForm
         comment={commentForm.comment}
         validObj={commentForm.validObj}
         onSubmit={commentForm.handleSubmit}
         onContentChange={commentForm.handleContentChange}
       />
+      
+        </div>
+      </div>
     </div>    
   </AppLayout>
   );  
@@ -194,12 +202,18 @@ const CommentEdit = (props) => {
       </h2>
     }>
     <div className="py-12">
+      <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+            
       <CommentForm
         comment={commentForm.comment}
         validObj={commentForm.validObj}
         onSubmit={commentForm.handleSubmit}
         onContentChange={commentForm.handleContentChange}
       />
+      
+        </div>
+      </div>
     </div>    
   </AppLayout>
   );
