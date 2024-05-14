@@ -8,6 +8,22 @@
 ## This is the Frontend module
 This is the Frontend module. You can check the Backend module of this application: [https://github.com/bu6ido/blog-backend](https://github.com/bu6ido/blog-backend)
 
+## How to Install
+1. Checkout this project
+
+2. Configure and install the Backend module of this application: [https://github.com/bu6ido/blog-backend](https://github.com/bu6ido/blog-backend)
+
+3. (Optional) Configure <b>VITE_APP_BACKEND_URL</b> in <b>.env</b> file to point to the address and port of the Backend module
+
+4. Run:
+```bash
+# Install project dependencies...
+npm install
+```
+
+5. Run `npm start` to start the server of Frontend module. The application will be available at `http://localhost:3000`.
+
+
 ## Introduction
 
 > Laravel Breeze React is the implementation for react from [breeze-next](https://github.com/laravel/breeze-next). 
