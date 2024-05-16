@@ -9,7 +9,7 @@
 This is the Frontend module. You can check the Backend module of this application: [https://github.com/bu6ido/blog-backend](https://github.com/bu6ido/blog-backend)
 
 ## How to Install
-1. Checkout this project
+1. Clone this repository
 
 2. Configure and install the Backend module of this application: [https://github.com/bu6ido/blog-backend](https://github.com/bu6ido/blog-backend)
 
